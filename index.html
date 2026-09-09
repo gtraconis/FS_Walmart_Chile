@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal ejecutivo de Frecuencia–Severidad y tripletas de Walmart Chile.">
+  <title>Walmart Chile | Frecuencia–Severidad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Ir al inicio">
+      <img src="assets/logo-alto-white.png" alt="ALTO">
+      <span class="brand-divider"></span>
+      <img class="sia-logo" src="assets/logo-sia-white.png" alt="SIA — Servicios de Inteligencia ALTO">
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#hallazgos">Hallazgos</a>
+      <a href="#frecuencia-severidad">Frecuencia–Severidad</a>
+      <a href="#tripletas">Tripletas</a>
+      <a href="#metodologia">Metodología</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow">Walmart Chile · Enero–julio 2026</div>
+        <h1>Frecuencia, severidad y patrones temporales por formato</h1>
+        <p>Priorización de tiendas mediante severidad robusta, diagnóstico de dispersión y tripletas Tienda × Día × Franja.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#frecuencia-severidad">Explorar matrices</a>
+          <a class="button secondary" href="#tripletas">Ver patrones temporales</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Resumen del análisis">
+        <div class="hero-number">66,740</div>
+        <div class="hero-label">eventos modelados</div>
+        <div class="hero-grid">
+          <div><strong>4</strong><span>formatos aptos</span></div>
+          <div><strong>380</strong><span>tiendas en FS</span></div>
+          <div><strong>3</strong><span>tripletas confirmadas</span></div>
+          <div><strong>7</strong><span>meses completos</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hallazgos">
+      <div class="section-heading">
+        <div><span class="kicker">01 · Lectura ejecutiva</span><h2>Los hallazgos que requieren atención</h2></div>
+        <p>La señal combina volumen, impacto económico y concentración temporal sin confundir significancia estadística con relevancia operativa.</p>
+      </div>
+      <div class="findings-grid">
+        <article class="finding accent-red"><span class="finding-index">01</span><h3>Lider concentra la mayor exposición</h3><p>Registra 41,421 eventos. Lider - 87 encabeza el ranking FS con 240.6 eventos mensuales y $13.7 millones CLP de severidad mensual robusta.</p></article>
+        <article class="finding accent-blue"><span class="finding-index">02</span><h3>Tres patrones superan la prueba completa</h3><p>Express - 689 y Acuenta - 454 / 947 cumplen simultáneamente participación, multiplicador, cobertura y corrección BH.</p></article>
+        <article class="finding accent-gold"><span class="finding-index">03</span><h3>Lider no presenta tripletas operativas</h3><p>Aunque existen diferencias estadísticas, ninguna combinación reúne una participación mínima de 20% dentro de la tienda.</p></article>
+        <article class="finding accent-orange"><span class="finding-index">04</span><h3>Express 400 aporta señales, no confirmaciones</h3><p>Ocho patrones cumplen los criterios operativos nominales, pero ninguno mantiene significancia después de BH.</p></article>
+        <article class="finding accent-green"><span class="finding-index">05</span><h3>El ajuste robusto protege la lectura</h3><p>Sólo 317 eventos —0.47%— fueron limitados en P99.5. Esto neutraliza capturas extremas sin eliminar observaciones.</p></article>
+      </div>
+    </section>
+
+    <section class="section soft" id="frecuencia-severidad">
+      <div class="section-heading">
+        <div><span class="kicker">02 · Frecuencia–Severidad</span><h2>Prioridad relativa por formato</h2></div>
+        <p>Los cortes corresponden a las medianas internas de cada cuenta. El score FS pondera 50% frecuencia y 50% severidad.</p>
+      </div>
+      <div class="account-tabs" role="tablist" aria-label="Seleccionar formato para Frecuencia–Severidad">
+        <button class="account-tab active" data-account="lider" role="tab">Lider</button>
+        <button class="account-tab" data-account="express" role="tab">Express</button>
+        <button class="account-tab" data-account="acuenta" role="tab">Acuenta</button>
+        <button class="account-tab" data-account="express400" role="tab">Express 400</button>
+      </div>
+      <div id="fs-content" class="analysis-card"></div>
+      <div class="quadrant-legend" aria-label="Definición de cuadrantes">
+        <span><i class="dot red"></i>Alta frecuencia · Alta severidad</span>
+        <span><i class="dot orange"></i>Alta frecuencia · Baja severidad</span>
+        <span><i class="dot gold"></i>Baja frecuencia · Alta severidad</span>
+        <span><i class="dot green"></i>Baja frecuencia · Baja severidad</span>
+      </div>
+    </section>
+
+    <section class="section" id="tripletas">
+      <div class="section-heading">
+        <div><span class="kicker">03 · Tripletas</span><h2>Patrones Tienda × Día × Franja</h2></div>
+        <p>Una confirmación requiere ≥3 eventos, participación ≥20%, multiplicador ≥2, cobertura monetaria ≥50% y BH &lt; 0.05.</p>
+      </div>
+      <div class="triplet-summary">
+        <article><strong>3</strong><span>confirmadas</span></article>
+        <article><strong>18</strong><span>de interés</span></article>
+        <article><strong>9,080</strong><span>tripletas evaluadas</span></article>
+        <article><strong>66,627</strong><span>eventos con hora válida</span></article>
+      </div>
+      <div class="account-tabs triplet-tabs" role="tablist" aria-label="Seleccionar formato para tripletas">
+        <button class="triplet-tab active" data-account="express" role="tab">Express</button>
+        <button class="triplet-tab" data-account="acuenta" role="tab">Acuenta</button>
+        <button class="triplet-tab" data-account="express400" role="tab">Express 400</button>
+        <button class="triplet-tab" data-account="lider" role="tab">Lider</button>
+      </div>
+      <div id="triplet-content" class="table-card"></div>
+    </section>
+
+    <section class="section dark" id="metodologia">
+      <div class="section-heading inverted">
+        <div><span class="kicker">04 · Metodología</span><h2>Un flujo auditable, robusto y reproducible</h2></div>
+        <p>El análisis conserva cada evento, documenta exclusiones y aplica pruebas independientes por cuenta.</p>
+      </div>
+      <div class="method-grid">
+        <article><span>01</span><h3>Universo comparable</h3><p>Hurto, Robo y Descarga; siete meses completos. Central Monitoreo se reasignó a su formato y tienda física.</p></article>
+        <article><span>02</span><h3>Suficiencia</h3><p>≥100 eventos, ≥10 tiendas, ≥6 meses y ≥80 montos positivos. Cuatro formatos pasan el control.</p></article>
+        <article><span>03</span><h3>Severidad robusta</h3><p>Winsorización P99.5 independiente por cuenta. Los montos vacíos permanecen vacíos.</p></article>
+        <article><span>04</span><h3>Decisión Poisson</h3><p>Las cuatro cuentas presentan sobredispersión; se utiliza Frecuencia–Severidad descriptiva robusta.</p></article>
+        <article><span>05</span><h3>Matriz FS</h3><p>Frecuencia mensual y severidad mensual robusta, con cortes medianos y ranking relativo 50/50.</p></article>
+        <article><span>06</span><h3>Tripletas</h3><p>Prueba binomial unilateral, comparación con otras tiendas y corrección Benjamini–Hochberg por cuenta.</p></article>
+      </div>
+      <div class="quality-strip">
+        <div><strong>12,042</strong><span>eventos de Central Monitoreo reasignados</span></div>
+        <div><strong>0</strong><span>eventos sin clasificar</span></div>
+        <div><strong>113</strong><span>eventos excluidos por falta de hora</span></div>
+        <div><strong>9</strong><span>tiendas fuera de FS por cobertura &lt;50%</span></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="image-modal" aria-label="Matriz ampliada">
+    <button class="modal-close" aria-label="Cerrar">×</button>
+    <img alt="Matriz Frecuencia–Severidad ampliada">
+  </dialog>
+
+  <footer>
+    <img src="assets/logo-sia-white.png" alt="Servicios de Inteligencia ALTO">
+    <p>Servicios de Inteligencia ALTO (SIA) · Walmart Chile · 2026</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
